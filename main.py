@@ -17,3 +17,8 @@ def write_to_file(file_path, content):
             file.write(line)
             if i != len(content) - 1:
                 file.write('\n')
+
+# Function to display the contents of the file with line numbers.
+def display_file_contents(contents):
+    for i, line in enumerate(contents):
+        print(str(i) + ":" + " " + line.strip('\n'))
