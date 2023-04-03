@@ -34,3 +34,17 @@ def insert_line(content, index, line):
 def delete_line(content, index):
     content.pop(index)
     return content
+
+
+# Function to search keyword
+def search_keyword(content, keyword):
+    keyword_found = False
+    for i, line in enumerate(content):
+        if keyword in line:
+            keyword_highlighted = f"\033[1;31m{keyword}\033[0m"  # You can change the color and style if needed
+            line_highlighted = line.replace(keyword, keyword_highlighted)
+            print(str(i) + ":" + line_highlighted.strip('\n'))
+            keyword_found = True
+            
+    if not keyword_found:
+        print("The word you are looking for is not in this file.")
