@@ -22,3 +22,15 @@ def write_to_file(file_path, content):
 def display_file_contents(contents):
     for i, line in enumerate(contents):
         print(str(i) + ":" + " " + line.strip('\n'))
+
+
+# Function to insert a line at a specific index.
+def insert_line(content, index, line):
+    content.insert(index, line)
+    return content
+
+
+# Function to delete a line at a specific index.
+def delete_line(content, index):
+    content.pop(index)
+    return content
