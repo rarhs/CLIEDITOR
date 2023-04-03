@@ -1,1 +1,2 @@
-print("Hello Earth!")
+import sys
+import os
