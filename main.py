@@ -45,6 +45,18 @@ def search_keyword(content, keyword):
             line_highlighted = line.replace(keyword, keyword_highlighted)
             print(str(i) + ":" + line_highlighted.strip('\n'))
             keyword_found = True
-            
+
     if not keyword_found:
         print("The word you are looking for is not in this file.")
+
+
+def replace_keyword(content, keyword, replacement):
+    modified_content = []
+    for line in content:
+        if keyword in line:
+            modified_line = line.replace(keyword, replacement)
+            modified_content.append(modified_line)
+        else:
+            modified_content.append(line)
+
+    return modified_content
